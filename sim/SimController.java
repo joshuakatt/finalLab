@@ -70,10 +70,9 @@ public class SimController
         oneButton = new JButton("1");
         zeroButton = new JButton("0");
         JButton testButton = new JButton("Butt");
+        JButton stopButton = new JButton("Stop");
         
         testButton.addActionListener(e -> testFunc());
-        
-        JButton stopButton = new JButton("Stop");
         stopButton.addActionListener(e -> simTimer.stop());
         
         toolbar.add(oneButton);
@@ -161,6 +160,7 @@ public class SimController
             fname = fileChooser.getSelectedFile().getName();
             
             Path path = Paths.get(fname);
+            
             try{
                 BufferedReader reader = Files.newBufferedReader(path);
                 //read File
