@@ -176,6 +176,17 @@ public class SimController
         
         //JOptionPane.showMessageDialog(frame, "Settings feature not yet implemented", "File Load Error", JOptionPane.ERROR_MESSAGE);
     }
+    
+    public void listToFile(String filename) throws IOException {
+        Path p1 = Paths.get(filename);
+        try(BufferedWriter writer = Files.newBufferedWriter(p1)){
+            writer.write("");
+        }
+        catch(FileNotFoundException e) {
+            System.err.println("A problem was encountered writing " +
+                filename);
+        }
+    }
 
     public void quit(){
         // SHUT DOWN YOUR OWN FRAME AND TIMER HERE
